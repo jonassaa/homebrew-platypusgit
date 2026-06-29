@@ -6,12 +6,13 @@ Homebrew tap for [PlatypusGit](https://github.com/jonassaa/platypusgit).
 
 ```bash
 brew tap jonassaa/platypusgit
-brew install --cask platypusgit
+brew install --cask --no-quarantine platypusgit
 ```
 
-The app is ad-hoc signed but not notarized (no paid Apple Developer account),
-so the cask strips the macOS Gatekeeper quarantine flag on install — it launches
-with no "unidentified developer" prompt.
+The app is ad-hoc signed but not notarized (no paid Apple Developer account).
+`--no-quarantine` tells Homebrew not to apply the macOS Gatekeeper flag, so it
+launches with no "unidentified developer" prompt. The cask carries no
+arbitrary-code stanzas, so no `brew trust` is required.
 
 ## Update
 
