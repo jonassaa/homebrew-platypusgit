@@ -10,15 +10,15 @@ cask "platypusgit" do
   app "PlatypusGit.app"
 
   # The app is ad-hoc signed but NOT notarized (no paid Apple Developer
-  # account). Install with `--no-quarantine` so Gatekeeper does not block it:
-  #   brew install --cask --no-quarantine platypusgit
-  # A postflight `xattr` strip would work too, but arbitrary-code stanzas force
-  # third-party taps to require `brew trust`, so we avoid it.
-  caveats <<~EOS
-    PlatypusGit is ad-hoc signed but not notarized. If you did not install with
-    `--no-quarantine`, clear the Gatekeeper flag once:
-      xattr -dr com.apple.quarantine "#{appdir}/PlatypusGit.app"
-  EOS
+  # account), so Gatekeeper quarantines it. Strip the flag on install.
+  # Homebrew 6.0.0 requires `brew trust` for ALL third-party tap casks
+  # regardless of arbitrary-code stanzas, so this postflight adds no extra
+  # trust cost there. On older Homebrew it reintroduces a trust prompt.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/PlatypusGit.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Application Support/io.github.jonassaa.platypusgit",
