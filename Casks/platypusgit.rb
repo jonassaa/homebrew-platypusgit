@@ -1,8 +1,8 @@
 cask "platypusgit" do
-  version :latest
-  sha256 :no_check
+  version "0.0.5"
+  sha256 "473fbc5544a2dbc46e3283d9085e01daf8378718928c7d28e4cdcb5aefc76838"
 
-  url "https://github.com/jonassaa/platypusgit/releases/latest/download/PlatypusGit_universal.dmg"
+  url "https://github.com/jonassaa/platypusgit/releases/download/v#{version}/PlatypusGit_universal.dmg"
   name "PlatypusGit"
   desc "Cross-platform, developer-focused git desktop app"
   homepage "https://github.com/jonassaa/platypusgit"
