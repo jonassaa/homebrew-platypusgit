@@ -22,11 +22,11 @@ jonassaa/platypusgit/platypusgit` first).
 ## Update
 
 ```bash
-brew upgrade --cask --greedy platypusgit
+brew upgrade --cask platypusgit
 ```
 
-The cask tracks the `latest` GitHub release, so `--greedy` is needed to
-reinstall the newest build.
+The cask pins an explicit version, so a normal `brew upgrade` picks up new
+releases once the tap is updated.
 
 ## Uninstall
 
