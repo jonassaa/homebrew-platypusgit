@@ -8,6 +8,7 @@ cask "platypusgit" do
   homepage "https://github.com/jonassaa/platypusgit"
 
   app "PlatypusGit.app"
+  binary "#{appdir}/PlatypusGit.app/Contents/MacOS/platypusgit", target: "pgit"
 
   # The app is ad-hoc signed but NOT notarized (no paid Apple Developer
   # account), so Gatekeeper quarantines it. Strip the flag on install.
