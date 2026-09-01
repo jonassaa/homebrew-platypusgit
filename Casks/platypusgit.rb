@@ -1,6 +1,6 @@
 cask "platypusgit" do
-  version "0.2.1"
-  sha256 "4bd9afa47f5de183c3b55b4c1e0989973cb47ae913fea51377e3a41cc9606392"
+  version "0.3.0"
+  sha256 "dbbe2cdfd1ae49de7e269242be542acc95f40773b3e069a57ff3aceba4df1092"
 
   url "https://github.com/jonassaa/platypusgit/releases/download/v#{version}/PlatypusGit_universal.dmg"
   name "platypusgit"
